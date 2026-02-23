@@ -8,11 +8,19 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - backend
+      - frontend
 
     restart: unless-stopped
 
+  frontend:
+    image: teim123/krisna_air:frontend-uat-1.0.0
+    container_name: frontend-uat
+    expose:
+      - "80"
+    restart: unless-stopped
+
   backend:
-    image: teim123/krisna_air:backend-uat
+    image: teim123/krisna_air:backend-uat-1.0.0
     container_name: backend-uat
     env_file:
       - .env.uat
