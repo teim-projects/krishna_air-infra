@@ -13,7 +13,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: teim123/krisna_air:frontend-uat-1.0.0
+    image: teim123/krisna_air:frontend-uat-1.0.1
     container_name: frontend-uat
     expose:
       - "80"
